@@ -1,0 +1,20 @@
+plugins {
+    id 'java-library'
+}
+
+group 'org.frc.royals496'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven {
+        name = "WPILib"
+        setUrl("http://first.wpi.edu/FRC/roborio/maven/release")
+    }
+}
+
+dependencies {
+    compileOnly group: 'edu.wpi.first.shuffleboard', name: "api", version :"2019.1.1"
+}
