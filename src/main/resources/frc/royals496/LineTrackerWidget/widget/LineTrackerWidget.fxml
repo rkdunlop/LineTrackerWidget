@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.VBox?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.simplewidget.widget.SimplePointWidget"
+      fx:controller="frc.royals496.LineTrackerWidget.widget.LineTrackerWidget"
       fx:id="root"
       spacing="4">
     <padding>

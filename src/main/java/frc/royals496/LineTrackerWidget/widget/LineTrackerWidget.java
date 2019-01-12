@@ -4,6 +4,7 @@ import edu.wpi.first.shuffleboard.api.widget.Description;
 import edu.wpi.first.shuffleboard.api.widget.ParametrizedController;
 import edu.wpi.first.shuffleboard.api.widget.SimpleAnnotatedWidget;
 import frc.royals496.LineTrackerWidget.data.LineTracker;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
@@ -27,7 +28,28 @@ public class LineTrackerWidget extends SimpleAnnotatedWidget<LineTracker> {
 
     @FXML
     private void initialize() {
-        left.textProperty().bind(dataOrDefault.map(  ))
+        left.textProperty().bind(
+                dataOrDefault
+                        .map(bool -> bool.getLeft()).map(left -> {
+                            return "Left: " + left;
+                        })
+
+        );
+        left.textProperty().bind(
+                dataOrDefault
+                        .map(bool -> bool.getCenter()).map(left -> {
+                    return "Left: " + left;
+                })
+
+        );
+        left.textProperty().bind(
+                dataOrDefault
+                        .map(bool -> bool.getRight()).map(left -> {
+                    return "Left: " + left;
+                })
+
+        );
+
     }
     @Override
     public Pane getView() {

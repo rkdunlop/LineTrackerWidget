@@ -2,7 +2,7 @@ package frc.royals496.LineTrackerWidget.data.type;
 
 import edu.wpi.first.shuffleboard.api.data.ComplexDataType;
 import edu.wpi.first.shuffleboard.api.util.Maps;
-import frc.royals496.LineTrackerWidget.frc.royals496.LineTrackerWidget.data.LineTracker;
+import frc.royals496.LineTrackerWidget.data.LineTracker;
 
 import java.util.Map;
 import java.util.function.Function;
@@ -20,9 +20,9 @@ public class LineTrackerType extends ComplexDataType<LineTracker> {
     @Override
     public Function<Map<String, Object>, LineTracker> fromMap() {
         return map -> new LineTracker(
-                Maps.getOrDefault(map, "left", fasle),
+                Maps.getOrDefault(map, "left", false),
                 Maps.getOrDefault(map, "center", false),
-                Maps.getOrDefault(map, "rigth", false)
+                Maps.getOrDefault(map, "right", false)
         );
     }
 
