@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
+
 <?import javafx.scene.layout.VBox?>
-<VBox xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="frc.royals496.LineTrackerWidget.widget.LineTrackerWidget"
-      fx:id="root"
-      spacing="4">
+<?import javafx.scene.shape.Circle?>
+
+<VBox fx:id="root" spacing="4" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="frc.royals496.LineTrackerWidget.widget.LineTrackerWidget">
     <padding>
         <!-- Keep a 4 pixel buffer around the widget to avoid it from feeling cramped -->
-        <Insets topRightBottomLeft="4"/>
+        <Insets topRightBottomLeft="4" />
     </padding>
-    <Label fx:id="left"/>
-    <Label fx:id="center"/>
-    <Label fx:id="right" />
+
+   <Circle fx:id="left" fill="DODGERBLUE" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
+   <Circle fx:id="center" fill="DODGERBLUE" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
+   <Circle fx:id="right" fill="DODGERBLUE" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
+
 </VBox>

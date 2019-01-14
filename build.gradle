@@ -14,10 +14,12 @@ repositories {
         name = "WPILib"
         setUrl("http://first.wpi.edu/FRC/roborio/maven/release")
     }
+    
 }
 
 dependencies {
     implementation group: 'edu.wpi.first.shuffleboard', name: "api", version :"2019.1.1"
+
     
 }
 

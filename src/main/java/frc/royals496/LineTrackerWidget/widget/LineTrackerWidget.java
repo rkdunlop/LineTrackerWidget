@@ -6,8 +6,9 @@ import edu.wpi.first.shuffleboard.api.widget.SimpleAnnotatedWidget;
 import frc.royals496.LineTrackerWidget.data.LineTracker;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Paint;
+import javafx.scene.shape.Circle;
 
 @Description(
         name = "Line Tracker",
@@ -20,39 +21,47 @@ public class LineTrackerWidget extends SimpleAnnotatedWidget<LineTracker> {
     @FXML
     private Pane root;
     @FXML
-    private Label left;
+    private Circle left;
     @FXML
-    private Label center;
+    private Circle center;
     @FXML
-    private Label right;
+    private Circle right;
 
     @FXML
     private void initialize() {
-        left.textProperty().bind(
-                dataOrDefault
-                        .map(bool -> bool.getLeft()).map(left -> {
-                            return "Left: " + left;
-                        })
 
-        );
-        left.textProperty().bind(
+        left.fillProperty().bind(
                 dataOrDefault
-                        .map(bool -> bool.getCenter()).map(left -> {
-                    return "Left: " + left;
-                })
-
+                        .map(LineTracker::getLeft)
+                        .map(left -> getColor(left))
         );
-        left.textProperty().bind(
+
+        center.fillProperty().bind(
                 dataOrDefault
-                        .map(bool -> bool.getRight()).map(left -> {
-                    return "Left: " + left;
-                })
-
+                        .map(LineTracker::getCenter)
+                        .map(center -> getColor(center))
         );
+
+        right.fillProperty().bind(
+                dataOrDefault
+                        .map(LineTracker::getRight)
+                        .map(right -> getColor(right))
+        );
+
+
+
 
     }
     @Override
     public Pane getView() {
         return root;
+    }
+
+    private Paint getColor(boolean b) {
+        if(b){
+            return Paint.valueOf("green");
+
+        }
+        return Paint.valueOf("red");
     }
 }
