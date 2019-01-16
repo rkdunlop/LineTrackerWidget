@@ -33,19 +33,19 @@ public class LineTrackerWidget extends SimpleAnnotatedWidget<LineTracker> {
         left.fillProperty().bind(
                 dataOrDefault
                         .map(LineTracker::getLeft)
-                        .map(left -> getColor(left))
+                        .map(this::getColor)
         );
 
         center.fillProperty().bind(
                 dataOrDefault
                         .map(LineTracker::getCenter)
-                        .map(center -> getColor(center))
+                        .map(this::getColor)
         );
 
         right.fillProperty().bind(
                 dataOrDefault
                         .map(LineTracker::getRight)
-                        .map(right -> getColor(right))
+                        .map(this::getColor)
         );
 
 
