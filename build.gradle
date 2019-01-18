@@ -18,7 +18,7 @@ repositories {
 }
 
 dependencies {
-    implementation group: 'edu.wpi.first.shuffleboard', name: "api", version :"2019.1.1"
+    implementation group: 'edu.wpi.first.shuffleboard', name: "api", version :"2019.2.1"
 
     
 }
@@ -29,7 +29,8 @@ javafx {
 }
 
 task installPlugin(type: Copy) {
-    from jar.archivePath
+    //from jar.archivePath
+    from jar.destinationDirectory.get()
     into System.getProperty("user.home")+ "/Shuffleboard/plugins"
 
 }
